@@ -1,0 +1,16 @@
+{
+    "name": "erdal/library",
+    "description": "Erdal Eroğlu Genel Kütüphanesi",
+    "autoload": {
+        "psr-4": {
+            "Erdal\\Library\\": "/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Erdal EROĞLU",
+            "email": "erdal.eroglu@gmail.com"
+        }
+    ],
+    "require": {}
+}

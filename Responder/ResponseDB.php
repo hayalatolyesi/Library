@@ -57,5 +57,36 @@ class ResponseDB {
         return $this->messageObject;
         
     }
+
+    /*
+    *
+    *  @return void
+    *
+    */    
+    public function flush(String $status=null):void{
+        
+        if($status!=null)
+        {
+
+            if($this->messageObject[$status])
+            {
+
+                unset($this->messageObject[$status]);
+
+            }
+
+        }else
+        {
+
+            if(isset($this->messageObject))
+            {
+
+                unset($this->messageObject);
+
+            }
+
+        }
+        
+    }      
     
 }

@@ -39,7 +39,7 @@ class Conf {
     *
     */
 
-    protected function getKey():String
+    protected static function getKey():String
     {
 
         return hash('sha256',self::$config['key']);
@@ -57,7 +57,7 @@ class Conf {
     *
     */
 
-    protected function getIv():String
+    protected static function getIv():String
     {
 
         return substr(hash('sha256',self::$config['iv']),0,16);
@@ -75,7 +75,7 @@ class Conf {
     *
     */
 
-    protected function getMethod():String
+    protected static function getMethod():String
     {
 
         return self::$config['method'];
@@ -93,7 +93,7 @@ class Conf {
     *
     */
 
-    public function setKey(String $key):void
+    public static function setKey(String $key):void
     {
 
        self::$config['key'] = $key;
@@ -111,7 +111,7 @@ class Conf {
     *
     */
 
-    public function setIv(String $iv):void
+    public static function setIv(String $iv):void
     {
 
        self::$config['iv'] = $iv;
@@ -129,7 +129,7 @@ class Conf {
     *
     */
 
-    public function setMethod(String $method):void
+    public static function setMethod(String $method):void
     {
 
        self::$config['method'] = $method;

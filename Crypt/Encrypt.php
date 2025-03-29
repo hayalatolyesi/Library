@@ -45,12 +45,12 @@ class Encrypt extends Conf{
     *   @return String
     *
     */
-    public static function makePure(String $string):String
+    public static function toUrl(String $string):String
     {
 
         $output = openssl_encrypt($string, self::getMethod(), self::getKey(), false, self::getIv());
 
-        return $output;
+        return base64_encode(urlencode($output));
 
     }    
 

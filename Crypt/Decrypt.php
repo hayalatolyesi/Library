@@ -46,10 +46,10 @@ class Decrypt extends Conf{
     *
     */
 
-    public static function makePure(String $string):String
+    public static function toUrl(String $string):String
     {
 
-        return openssl_decrypt($string,self::getMethod(), self::getKey(), false, self::getIv());
+        return openssl_decrypt(urldecode(base64_decode($string)),self::getMethod(), self::getKey(), false, self::getIv());
 
     }    
 

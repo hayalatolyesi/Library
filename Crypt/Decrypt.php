@@ -32,4 +32,25 @@ class Decrypt extends Conf{
 
     }
 
+    /*
+    *
+    *   @DECRYPT CLASS
+    *
+    *   ---- For make to decrypted  data ----
+    *
+    *   @public make
+    *
+    *   @param null   
+    *
+    *   @return String
+    *
+    */
+
+    public static function makePure(String $string):String
+    {
+
+        return openssl_decrypt($string,self::getMethod(), self::getKey(), false, self::getIv());
+
+    }    
+
 }

@@ -31,4 +31,27 @@ class Encrypt extends Conf{
 
     }
 
+
+    /*
+    *
+    *   @ENCRYPT CLASS
+    *
+    *   ---- For make to crypted  data ----
+    *
+    *   @public make
+    *
+    *   @param null   
+    *
+    *   @return String
+    *
+    */
+    public static function makePure(String $string):String
+    {
+
+        $output = openssl_encrypt($string, self::getMethod(), self::getKey(), false, self::getIv());
+
+        return $output;
+
+    }    
+
 }
